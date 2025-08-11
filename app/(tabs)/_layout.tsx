@@ -3,6 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function TabLayout() {
   return (
+
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#ffd33d",
@@ -11,6 +12,7 @@ export default function TabLayout() {
         },
         headerShadowVisible: false,
         headerTintColor: "#fff",
+        headerShown: false,
         tabBarStyle: {
           backgroundColor: "#25292e",
         },
@@ -19,10 +21,36 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Movimientos",
+          title: "Home",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "home-sharp" : "home-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="income"
+        options={{
+          title: "Ingresos",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name="logo-usd"
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="egress"
+        options={{
+          title: "Egresos",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'ticket' : 'ticket-outline'}
               color={color}
               size={24}
             />

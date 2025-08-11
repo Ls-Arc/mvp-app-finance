@@ -1,11 +1,16 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { FinanceProvider } from "@/hooks/FinanceContex";
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <StatusBar style="light" />
-    </Stack>
+    <>
+      <FinanceProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
+        <StatusBar style="dark" />
+      </FinanceProvider>
+    </>
   )
 }
